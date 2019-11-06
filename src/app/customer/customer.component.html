@@ -1,0 +1,17 @@
+<h1>The capital city is : {{city}}</h1>
+
+<p>Customer Name : {{customer}}</p>
+<ul>
+    <div *ngFor="let customer of customers" (click)="selectCustomer(customer)">
+
+        <li *ngIf="customer.age<30">
+           <strong> {{customer.firstName}} {{customer.lastName}}</strong>
+        </li>
+
+    </div>
+
+</ul>
+
+<strong *ngIf="selectedCustomer; else ElseBlogu">{{selectedCustomer.firstName}} seçtiniz</strong>
+
+<ng-template #ElseBlogu> </ng-template>
